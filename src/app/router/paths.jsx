@@ -1,0 +1,14 @@
+export const PATHS = {
+    ROOT: "/",
+    HOME: "/home",
+    ABOUT: "/about",
+    CART: "/cart",
+    CATEGORY: "/category",
+    CONTACT: "/contact",
+    DETAIL_ITEM: "/detail-item/:id",
+    CHECKOUT: "/checkout",
+    ACCOUNT: "/account",
+    LOGIN: "/login",
+    SIGNIN: "/signin",
+    NOTFOUND: "/404-notfound",
+}
