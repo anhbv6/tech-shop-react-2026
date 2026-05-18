@@ -11,7 +11,7 @@ class Footer extends React.Component {
     render() { 
         return ( 
             <footer className="bg-black text-[#FAFAFA] mt-10">
-                <div className="px-28 pt-16 pb-14 grid grid-cols-5 gap-10">
+                <div className="px-36 pt-16 pb-14 grid grid-cols-5 gap-10">
                     <div className="flex flex-col gap-4">
                         <h3 className="text-[28px] font-semibold leading-none">Missing</h3>
                         <span className="text-xl font-medium">Subscribe</span>

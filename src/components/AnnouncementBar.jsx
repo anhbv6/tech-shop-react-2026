@@ -8,7 +8,7 @@ class AnnouncementBar extends React.Component {
     state = {  }
     render() { 
         return (
-            <div className="bg-black text-[#FAFAFA] h-12 justify-between px-28 items-center flex">
+            <div className="bg-black text-[#FAFAFA] h-12 justify-between px-36 items-center flex">
                 <span className=""></span>
                 <div className="flex gap-2 items-center ">
                     <span className="text-sm">Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!</span>

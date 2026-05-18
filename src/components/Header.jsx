@@ -47,7 +47,7 @@ class Header extends React.Component {
         return (
             <div>
                 <AnnouncementBar />
-                <div className="h-24 flex items-center justify-between px-28 border-b border-[#B3B3B3]">
+                <div className="h-24 flex items-center justify-between px-36 border-b border-[#B3B3B3]">
                     <h1 className="font-bold text-3xl cursor-pointer" onClick={() => this.goTo(PATHS.HOME)}>Missing</h1>
                     <div className="flex gap-12">
                         {this.renderMenu()}

@@ -64,6 +64,11 @@ export const routes = [
                 path: PATHS.ACCOUNT,
                 element: <Account />,
             },
+
+            {
+                path: PATHS.SIGNIN,
+                element: <Signin />,
+            },
         ]
     },
 
@@ -75,10 +80,7 @@ export const routes = [
                 element: <Login />,
             },
 
-            {
-                path: PATHS.SIGNIN,
-                element: <Signin />,
-            },
+            
         ],
     },
     
