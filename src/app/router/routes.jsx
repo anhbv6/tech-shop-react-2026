@@ -69,6 +69,11 @@ export const routes = [
                 path: PATHS.SIGNIN,
                 element: <Signin />,
             },
+
+            {
+                path: PATHS.LOGIN,
+                element: <Login />,
+            },
         ]
     },
 

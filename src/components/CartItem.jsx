@@ -28,7 +28,7 @@ class CartItem extends React.Component {
     render() { 
         const {data} = this.props;
         return ( 
-            <div key={data.id} className="group min-w-[300px]">
+            <div key={data.id} className="group min-w-[290px]">
                 <div className="relative bg-[#F5F5F5] h-[250px] w-full overflow-hidden">
 
                     {/* Discount */}

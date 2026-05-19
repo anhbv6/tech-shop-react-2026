@@ -286,6 +286,16 @@ class Home extends React.Component {
         this.enableDragScroll(this.bestSelling.current);
 
         window.addEventListener("scroll", this.handleScroll);
+
+        console.log("2.component did mount Home");
+    }
+
+    // componentDidUpdate() {
+    //     console.log("3.component did update Home");
+    // }
+
+    componentWillUnmount() {
+        console.log("4.component will un mount Home");
     }
 
     enableDragScroll = (slider) => {
@@ -411,6 +421,7 @@ class Home extends React.Component {
     }
 
     render() { 
+        // console.log("5.render Home");
         return ( 
             <div className="px-36 relative">
                 <div className="flex">
