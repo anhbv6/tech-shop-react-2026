@@ -1,6 +1,6 @@
 import React from "react";
 import AnnouncementBar from "./AnnouncementBar";
-import { CiHeart, CiSearch, CiShoppingCart } from "react-icons/ci";
+import { CiHeart, CiSearch, CiShoppingCart, CiUser } from "react-icons/ci";
 import { PATHS } from "../app/router/paths";
 import { withRouter } from "../app/router/withRouter";
 
@@ -14,6 +14,7 @@ class Header extends React.Component {
         { label: "Home", path: PATHS.HOME },
         { label: "Contact", path: PATHS.CONTACT },
         { label: "About", path: PATHS.ABOUT },
+        { label: "Category", path: PATHS.CATEGORY },
         { label: "Sign Up", path: PATHS.SIGNIN },
     ]
 
@@ -58,8 +59,9 @@ class Header extends React.Component {
                             <CiSearch className="absolute top-1.5 right-2 cursor-pointer" size={26} />
                         </div>
                         <div className="flex gap-4">
-                            <CiHeart size={26} className="cursor-pointer"/>
-                            <CiShoppingCart size={26} className="cursor-pointer"/>
+                            <CiHeart size={26} className="cursor-pointer" onClick={() => this.goTo("/wishlist")}/>
+                            <CiShoppingCart size={26} className="cursor-pointer" onClick={() => this.goTo("/cart")}/>
+                            <CiUser size={26} className="cursor-pointer" onClick={() => this.goTo("/account")}/>
                         </div>
                     </div>
                 </div>

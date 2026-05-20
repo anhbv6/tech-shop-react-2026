@@ -2,6 +2,7 @@ import React from "react";
 import { CiHeart } from "react-icons/ci";
 import { FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { IoEyeOutline } from "react-icons/io5";
+import { withRouter } from "../app/router/withRouter";
 
 class CartItem extends React.Component {
     constructor(props) {
@@ -24,6 +25,14 @@ class CartItem extends React.Component {
 
         return stars;
     };
+
+    goTo = (value, data) => {
+        console.log("value", value);
+        console.log("dataa", data);
+        
+        
+        this.props.router.navigate(value);
+    }
 
     render() { 
         const {data} = this.props;
@@ -62,7 +71,7 @@ class CartItem extends React.Component {
 
                 {/* Info */}
                 <div className="flex flex-col pt-4 gap-1">
-                    <h1 className="text-sm font-medium">{data.name}</h1>
+                    <h1 className="text-sm font-medium cursor-pointer" onClick={() => this.goTo(`/detail-item/${data.id}`, data)}>{data.name}</h1>
 
                     <div className="flex gap-2 items-center">
                         <span className="text-[#DB4444] font-semibold">
@@ -88,4 +97,4 @@ class CartItem extends React.Component {
     }
 }
  
-export default CartItem;
+export default withRouter(CartItem);

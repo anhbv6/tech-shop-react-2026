@@ -15,6 +15,7 @@ import { PATHS } from "./paths";
 import AuthLayout from "../../layouts/AuthLayout";
 import MainLayout from "../../layouts/MainLayout";
 import { Navigate } from "react-router-dom";
+import WishList from "../../pages/WishList";
 
 export const routes = [
     {
@@ -63,6 +64,11 @@ export const routes = [
             {
                 path: PATHS.ACCOUNT,
                 element: <Account />,
+            },
+
+            {
+                path: PATHS.WISHLIST,
+                element: <WishList />,
             },
 
             {

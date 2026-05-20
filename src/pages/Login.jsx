@@ -1,12 +1,15 @@
 import React from "react";
+import { useAuthStore } from "../store/authStore";
+import { withRouter } from "../app/router/withRouter";
 
 class Login extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            email: "",
+            username: "",
             password: "",
+            loading: false,
         }
     }
 
@@ -16,9 +19,33 @@ class Login extends React.Component {
         })
     }
 
-    handleSubmit = (e) => {
-        e.preventDefault();
-        console.log("formLogin", this.state);
+    goTo = (path) => {
+        this.props.router.navigate(path)
+    }
+
+    handleSubmit = async (e) => {
+        try {
+            this.setState({
+                loading: true,
+                err: "",
+            })
+
+            await useAuthStore.getState().login({
+                username: this.state.username,
+                password: this.state.password,
+            })
+
+            this.setState({
+                loading: false,
+            });
+
+            this.goTo("/home")
+        } catch (err) {
+            this.setState({
+                loading: false,
+                err: err.message || "Login failed",
+            });
+        }
     }
 
     render() {
@@ -41,12 +68,12 @@ class Login extends React.Component {
 
                         <div className="flex flex-col gap-6 pb-7">
                             <input
-                                type="email"
-                                name="email"
-                                placeholder="Email or Phone Number"
+                                type="username"
+                                name="username"
+                                placeholder="Esername or Phone Number"
                                 className="w-full h-8 border-0 border-b border-[#9b9b9b] pb-2 text-base outline-none placeholder:text-[#9b9b9b]"
                                 onChange={this.handleChange}
-                                value={this.state.email}
+                                value={this.state.username}
                             />
 
                             <input
@@ -60,7 +87,7 @@ class Login extends React.Component {
                         </div>
 
                         <div className="flex flex-row gap-4 pb-4 justify-between items-center">
-                            <button onClick={this.handleSubmit} className="min-w-[143px] h-14 bg-[#e34444] text-white text-[13px] rounded-[3px] mb-3 hover:bg-[#d63c3c] transition cursor-pointer">Log In</button>
+                            <button onClick={() => this.handleSubmit()} className="min-w-[143px] h-14 bg-[#e34444] text-white text-[13px] rounded-[3px] mb-3 hover:bg-[#d63c3c] transition cursor-pointer">Log In</button>
                             <span className="text-[#e34444] cursor-pointer">Forget Password?</span>
                         </div>
                     </div>
@@ -70,4 +97,4 @@ class Login extends React.Component {
     }
 }
  
-export default Login;
+export default withRouter(Login);

@@ -7,6 +7,7 @@ import { CiHeart, CiStar } from "react-icons/ci";
 import { IoEyeOutline, IoWatchOutline } from "react-icons/io5";
 import './style.css';
 import CartItem from "../components/CartItem";
+import { withRouter } from "../app/router/withRouter";
 
 class Home extends React.Component {
     constructor(props) {
@@ -883,4 +884,4 @@ class Home extends React.Component {
     }
 }
  
-export default Home;
+export default withRouter(Home);
